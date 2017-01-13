@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+LOG="/var/log/crawler.log"
+
+if [ $# -lt 1 ]
+then
+    echo "Required base URL [-url] parameter to start crawling. Optional paramenter- maximum crawl limit [-limit]."
+    exit
+fi
+
+while [[ $# -gt 1 ]]
+do
+    key="$1"
+    case $key in
+        -u|--url )
+        URL="$2"
+        shift
+        ;;
+        -l|--limit )
+        LIMIT="$2"
+        shift
+        ;;
+        * )
+        echo "Invalid option"
+        exit
+        ;;
+    esac
+    shift
+done
+
+date >> $LOG
+
+php src/Crawl.php -u$URL -l$LIMIT 2>&1 1 | tee -a $LOG
+
+echo "Output has been logged here $LOG"
