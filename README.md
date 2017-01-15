@@ -8,7 +8,7 @@ A crawler is a program that starts with a URL on the web e.g. https://news.googl
 There are several popular crawling and web scraping framework e.g. [Scrapy](https://github.com/scrapy/scrapy). Crawler is a minimal implementation of a crawling process, not in-depth as Scrapy.
 
 ### Dependencies
-A working LAMP setup is required to execute the crawler.
+The usage has been explained in Linux environment but execution will be compatible with any other operating systems. Apache and PHP setup is required to execute the crawler.
 
 ### Usage
 ```shell
@@ -28,6 +28,11 @@ $ ls -lt /var/tmp/crawled
 
 ### Purpose
 This program is a basic example and not intended for any commercial purpose. There are different areas which need to be improved, including its documentation.
+
+This program uses PHP cURL multi to crawl multiple URL in parallel. Check out the detailed implementation
+```
+src/service/CurlMultiProcess.php
+```
 
 ### Where it can be improved?
 - Crawler bash script; that's nothing but a wrapper now.
