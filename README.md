@@ -29,7 +29,7 @@ $ ls -lt /var/tmp/crawled
 ### Purpose
 This program is a basic example and not intended for any commercial purpose. There are different areas which need to be improved, including its documentation.
 
-This program uses PHP cURL multi to crawl multiple URL in parallel. Check out the detailed implementation
+This program uses PHP cURL multi functions in behind to scrap multiple URL contents in parallel. Check out its detailed implementation
 ```
 src/service/CurlMultiProcess.php
 ```
