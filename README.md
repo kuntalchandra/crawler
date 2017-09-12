@@ -9,10 +9,14 @@ There are several popular crawling and web scraping framework e.g. [Scrapy](http
 
 ### Dependencies
 The usage has been explained in Linux environment but execution will be compatible with any other operating systems. Apache and PHP setup is required to execute the crawler.
+Additionaly mbstring module needs to be installed.
+```shell
+$ sudo apt-get install php7.0-mbstring
+```
 
 ### Usage
 ```shell
-$ crawler -u https://news.google.co.in --limit 500
+$ ./crawler -u https://news.google.co.in --limit 500
 ```
 
 Output will be logged in detail, including execution time for each pass
